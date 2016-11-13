@@ -22,5 +22,5 @@ And finally, run all the migration files
     php artisan migrate
 ```
 
-![Screenshot](https://lh6.googleusercontent.com/3qXc-oPwwZBlvRYTyp0-LqA2y-BRz2ngOkkQp1NZ39uNR3mTjzgCJgxojnMAAVRmKvUIdwqovunt4EY=w1360-h662-rw)
+![task manager](https://cloud.githubusercontent.com/assets/5895908/20246007/80257188-a9d3-11e6-9355-9cfa87b997a5.JPG)
 
