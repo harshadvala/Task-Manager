@@ -3,7 +3,7 @@ A simple task manager for Laravel
 
 TaskManager is a Laravel application which manage projects, tasks and users.
 
-### Install
+### Installation
 First clone the git repository:
 
 ```
