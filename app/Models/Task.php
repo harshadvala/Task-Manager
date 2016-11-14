@@ -14,32 +14,34 @@ use Eloquent as Model;
  * @property integer $id
  * @property string $title
  * @property string $description
+ * @property integer $project_id
  * @property integer $status
- * @property integer $priority
+ * @property integer $urgent_level
+ * @property integer $important_level
  * @property integer $created_by
- * @property integer $owner_id
+ * @property integer $assign_to
  * @property string $due_date
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * @property-read \App\Models\Settings\Project $project
+ * @property-read \App\Models\User $assignTo
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereDescription($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereProjectId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereStatus($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Task wherePriority($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereUrgentLevel($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereImportantLevel($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereCreatedBy($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereOwnerId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereAssignTo($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereDueDate($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Task whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property integer $priority_level
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Task wherePriorityLevel($value)
  */
 class Task extends Model
 {
-
     public $table = 'tasks';
-
 
     public $fillable = [
         'title',

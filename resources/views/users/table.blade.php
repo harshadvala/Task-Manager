@@ -21,3 +21,4 @@
     @endforeach
     </tbody>
 </table>
+<div class="pagination pull-right"> {{ $users->links() }} </div>

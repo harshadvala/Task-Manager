@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use View;
 
 class UserController extends AppBaseController
 {
@@ -25,21 +26,20 @@ class UserController extends AppBaseController
      * Display a listing of the User.
      *
      * @param Request $request
-     * @return Response
+     * @return Response|view
      */
     public function index(Request $request)
     {
         $this->userRepository->pushCriteria(new RequestCriteria($request));
-        $users = $this->userRepository->all();
+        $users = $this->userRepository->paginate(10);
 
-        return view('users.index')
-            ->with('users', $users);
+        return view('users.index')->with('users', $users);
     }
 
     /**
      * Show the form for creating a new User.
      *
-     * @return Response
+     * @return Response|view
      */
     public function create()
     {
