@@ -11,23 +11,31 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function () {
+    return redirect('tasks');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
 Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
 
-Route::resource('tasks', 'TaskController');
-Route::put('tasks/task-complete/{task_id}', 'TaskController@updateTaskStatus');
-Route::resource('users', 'UserController');
-Route::resource('notes', 'NoteController');
-Route::get('settings/projects', ['as'=> 'settings.projects.index', 'uses' => 'Settings\ProjectController@index']);
-Route::post('settings/projects', ['as'=> 'settings.projects.store', 'uses' => 'Settings\ProjectController@store']);
-Route::get('settings/projects/create', ['as'=> 'settings.projects.create', 'uses' => 'Settings\ProjectController@create']);
-Route::put('settings/projects/{project}', ['as'=> 'settings.projects.update', 'uses' => 'Settings\ProjectController@update']);
-Route::patch('settings/projects/{project}', ['as'=> 'settings.projects.update', 'uses' => 'Settings\ProjectController@update']);
-Route::delete('settings/projects/{project}/delete', ['as'=> 'settings.projects.destroy', 'uses' => 'Settings\ProjectController@destroy']);
-Route::get('settings/projects/{project}', ['as'=> 'settings.projects.show', 'uses' => 'Settings\ProjectController@show']);
-Route::get('settings/projects/{project}/edit', ['as'=> 'settings.projects.edit', 'uses' => 'Settings\ProjectController@edit']);
+    Route::resource('tasks', 'TaskController');
+    Route::put('tasks/task-complete/{task_id}', 'TaskController@updateTaskStatus');
+    Route::resource('users', 'UserController');
+    Route::resource('notes', 'NoteController');
+
+    Route::group(['prefix' => 'settings', 'namespace' => 'Settings'], function () {
+        //PROJECT ROUTES
+        Route::get('/projects', ['as' => 'settings.projects.index', 'uses' => 'ProjectController@index']);
+        Route::post('/projects', ['as' => 'settings.projects.store', 'uses' => 'ProjectController@store']);
+        Route::get('/projects/create', ['as' => 'settings.projects.create', 'uses' => 'ProjectController@create']);
+        Route::put('/projects/{project}', ['as' => 'settings.projects.update', 'uses' => 'ProjectController@update']);
+        Route::patch('/projects/{project}', ['as' => 'settings.projects.update', 'uses' => 'ProjectController@update']);
+        Route::delete('/projects/{project}/delete', ['as' => 'settings.projects.destroy', 'uses' => 'ProjectController@destroy']);
+        Route::get('/projects/{project}', ['as' => 'settings.projects.show', 'uses' => 'ProjectController@show']);
+        Route::get('/projects/{project}/edit', ['as' => 'settings.projects.edit', 'uses' => 'ProjectController@edit']);
+    });
+});
