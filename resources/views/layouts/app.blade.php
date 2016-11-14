@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
 
+
     @yield('css')
 </head>
 
@@ -172,6 +173,7 @@
 <script>
     $('ul.alert,div.alert').delay(3000).fadeOut('fast');
 </script>
+< link rel="shortcut icon" href="{{ asset('Check-box-icon.png') }}" >
 @yield('scripts')
 </body>
 </html>
