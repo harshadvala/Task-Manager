@@ -48,7 +48,7 @@
                 fnDrawCallback: function () {
                     if (table) {
                         rowCount = table.data().length;
-                        $('#task-title').html("Tasks(" + rowCount + ")");
+                        $('#task-title').html("<i class='fa fa-tasks'></i> Tasks(" + rowCount + ")");
                     }
                 },
                 order: [],

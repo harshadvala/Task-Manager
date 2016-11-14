@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left" id="task-title">Tasks</h1>
+        <h1 class="pull-left" id="task-title"><i class="fa fa-tasks"></i>Tasks</h1>
 
         <div id="filterData" class="pull-right">
             <form class="form-inline">
