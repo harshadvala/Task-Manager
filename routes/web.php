@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::resource('dashboard', 'DashboardController');
     Route::resource('tasks', 'TaskController');
     Route::put('tasks/task-complete/{task_id}', 'TaskController@updateTaskStatus');
     Route::resource('users', 'UserController');
