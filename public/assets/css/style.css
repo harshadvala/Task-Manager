@@ -47,7 +47,7 @@ label i {
     color: #ccc;
 }
 
-input[type="checkbox"] { display: none; }
+
 
 input[type="checkbox"] + i:before {
     font-family: 'FontAwesome';
