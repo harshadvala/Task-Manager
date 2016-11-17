@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap-colorpicker/2.3.6/css/bootstrap-colorpicker.css">
-    {{--<link href="{{asset('assets/css/bootstrap-colorpicker.css')}}" rel="stylesheet" type="text/css"/>--}}
     <link href="{{asset('assets/css/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/css/AdminLTE.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css"/>
@@ -168,8 +166,7 @@
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script src="{{asset('assets/bootstrap-colorpicker.js')}}" type="text/javascript"></script>
-<script src="{{asset('assets/bootstrap-colorpicker.min.js')}}" type="text/javascript"></script>
+
 <script>
     $('ul.alert,div.alert').delay(3000).fadeOut('fast');
 </script>
